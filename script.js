@@ -123,3 +123,70 @@ filters?.addEventListener("click", (e) => {
 
 // Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Photography Lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxOverlay = document.querySelector(".lightboxOverlay");
+const lightboxClose = document.querySelector(".lightboxClose");
+const photos = Array.from(document.querySelectorAll(".photo[data-photo]"));
+let currentPhotoIndex = 0;
+
+function openLightbox(index) {
+  currentPhotoIndex = index;
+  const photo = photos[index];
+  
+  // Update lightbox content
+  document.getElementById("lightboxTitle").textContent = photo.dataset.title;
+  document.getElementById("lightboxLocation").textContent = `📍 ${photo.dataset.location}`;
+  document.getElementById("exifCamera").textContent = photo.dataset.camera;
+  document.getElementById("exifLens").textContent = photo.dataset.lens;
+  document.getElementById("exifSettings").textContent = photo.dataset.settings;
+  document.getElementById("lightboxCounter").textContent = `${index + 1} of ${photos.length}`;
+  
+  // Update map link
+  const mapLink = document.getElementById("lightboxMap");
+  mapLink.href = `https://www.google.com/maps?q=${photo.dataset.lat},${photo.dataset.lng}`;
+  
+  // Show lightbox
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function navigateLightbox(direction) {
+  currentPhotoIndex += direction;
+  if (currentPhotoIndex < 0) currentPhotoIndex = photos.length - 1;
+  if (currentPhotoIndex >= photos.length) currentPhotoIndex = 0;
+  openLightbox(currentPhotoIndex);
+}
+
+// Event listeners
+photos.forEach((photo, index) => {
+  photo.addEventListener("click", () => openLightbox(index));
+});
+
+lightboxClose?.addEventListener("click", closeLightbox);
+lightboxOverlay?.addEventListener("click", closeLightbox);
+document.getElementById("lightboxPrev")?.addEventListener("click", () => navigateLightbox(-1));
+document.getElementById("lightboxNext")?.addEventListener("click", () => navigateLightbox(1));
+
+// Keyboard navigation
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("active")) return;
+  
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") navigateLightbox(-1);
+  if (e.key === "ArrowRight") navigateLightbox(1);
+});
+
+// Prevent body scroll when lightbox is open
+lightbox?.addEventListener("wheel", (e) => {
+  if (e.target.closest(".lightboxInfo")) return;
+  e.preventDefault();
+}, { passive: false });
