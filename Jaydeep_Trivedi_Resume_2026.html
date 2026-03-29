@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jaydeep Trivedi - Resume - 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: #000;
+      background: #fff;
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0.5in 0.75in 0.6in;
+    }
+
+    /* ─── Print action bar (hidden on print) ──────── */
+    .printBar {
+      text-align: center;
+      margin-bottom: 28px;
+      padding: 14px 16px;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .printBar p {
+      font-size: 9pt;
+      color: #555;
+      margin-bottom: 10px;
+    }
+    .printBar p strong { color: #111; }
+    .printBtn {
+      display: inline-block;
+      padding: 9px 26px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 10pt;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+    }
+    .printBtn:hover { background: #333; }
+
+    @media print {
+      .printBar { display: none !important; }
+      body { padding: 0; max-width: none; }
+      @page { margin: 0.6in 0.7in; size: A4; }
+      .job { page-break-inside: avoid; }
+      .section { page-break-inside: avoid; }
+    }
+
+    /* ─── Header ──────────────────────────────────── */
+    .rHeader { margin-bottom: 14px; }
+
+    .rName {
+      font-size: 22pt;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #000;
+    }
+
+    .rTitle {
+      font-size: 11pt;
+      font-weight: 500;
+      color: #222;
+      margin-top: 3px;
+    }
+
+    .rContact {
+      font-size: 9pt;
+      color: #444;
+      margin-top: 7px;
+      line-height: 1.7;
+    }
+
+    .rContact a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .rContact a:hover { text-decoration: underline; }
+
+    .dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      background: #999;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin: 0 6px;
+      position: relative;
+      top: -1px;
+    }
+
+    /* ─── Section headings ──────────────────────────── */
+    .section { margin-top: 16px; }
+
+    .sectionTitle {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #000;
+      border-bottom: 1.5px solid #000;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    /* ─── Summary ───────────────────────────────────── */
+    .summary {
+      font-size: 10pt;
+      line-height: 1.55;
+      color: #111;
+    }
+
+    /* ─── Skills ────────────────────────────────────── */
+    .skillRow {
+      font-size: 9.5pt;
+      line-height: 1.65;
+      margin-bottom: 2px;
+    }
+    .skillCat { font-weight: 600; }
+
+    /* ─── Experience ────────────────────────────────── */
+    .job { margin-bottom: 15px; }
+
+    .jobHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .jobRole {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .jobDate {
+      font-size: 9pt;
+      color: #444;
+      white-space: nowrap;
+    }
+
+    .jobOrg {
+      font-size: 9.5pt;
+      color: #333;
+      margin-top: 1px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .jobBullets {
+      padding-left: 14px;
+      list-style: disc;
+    }
+
+    .jobBullets > li {
+      font-size: 9.5pt;
+      line-height: 1.5;
+      margin-bottom: 3px;
+      color: #111;
+    }
+
+    .jobBullets > li strong { color: #000; }
+
+    .subList {
+      padding-left: 16px;
+      list-style: circle;
+      margin-top: 3px;
+    }
+
+    .subList li {
+      font-size: 9pt;
+      line-height: 1.45;
+      margin-bottom: 2px;
+      color: #222;
+    }
+
+    .jobTech {
+      font-size: 8.5pt;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    .jobTech span { font-weight: 600; color: #333; }
+
+    /* ─── Key Achievements ──────────────────────────── */
+    .achieveGrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px 20px;
+    }
+
+    .achieveBlock h4 {
+      font-size: 9.5pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #000;
+    }
+
+    .achieveBlock ul {
+      padding-left: 13px;
+      list-style: disc;
+    }
+
+    .achieveBlock ul li {
+      font-size: 9pt;
+      line-height: 1.5;
+      color: #111;
+    }
+
+    .achieveBlock p {
+      font-size: 9pt;
+      line-height: 1.5;
+      color: #111;
+    }
+
+    /* ─── Additional ────────────────────────────────── */
+    .addlRow {
+      font-size: 9.5pt;
+      line-height: 1.65;
+      margin-bottom: 2px;
+    }
+
+    .addlLabel { font-weight: 600; }
+
+    @media print {
+      .achieveGrid { display: block; }
+      .achieveBlock { margin-bottom: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRINT BAR -->
+  <div class="printBar">
+    <p>To save as PDF: click the button below, then in the print dialog set <strong>Destination → Save as PDF</strong> and paper size to <strong>A4</strong>. Disable headers/footers for a clean output.</p>
+    <button class="printBtn" onclick="window.print()">&#8659; Save as PDF</button>
+  </div>
+
+  <!-- HEADER -->
+  <div class="rHeader">
+    <div class="rName">Jaydeep Trivedi</div>
+    <div class="rTitle">Product Manager &mdash; APIs, Platforms &amp; Digital Transformation</div>
+    <div class="rContact">
+      <a href="mailto:JD.TRI.90@gmail.com">JD.TRI.90@gmail.com</a>
+      <span class="dot"></span>
+      <a href="https://linkedin.com/in/jaydeeptrivedi" target="_blank" rel="noreferrer">linkedin.com/in/jaydeeptrivedi</a>
+      <span class="dot"></span>
+      Weiz/Graz, Austria &mdash; EU Work Authorized
+      <span class="dot"></span>
+      <a href="https://medium.com/@jaydeepjtrivedi" target="_blank" rel="noreferrer">medium.com/@jaydeepjtrivedi</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="sectionTitle">Professional Summary</div>
+    <p class="summary">
+      Product Manager with 12+ years of experience across both consumer-facing products and technical platforms, spanning product strategy, roadmap execution, and digital transformation. I combine customer-centric discovery (user research, journey optimization, A/B testing, and conversion improvement) with deep platform expertise in APIs, integrations, reliability, and monetization. Proven outcomes include &euro;850K annual recurring revenue through API monetization, 25% reduction in support tickets, and scalable systems handling millions of events through close collaboration with engineering, design, sales, and executive stakeholders.
+    </p>
+  </div>
+
+  <!-- CORE SKILLS -->
+  <div class="section">
+    <div class="sectionTitle">Core Skills</div>
+    <div class="skillRow"><span class="skillCat">Product Strategy &amp; Management:</span> API Monetization &middot; Platform Strategy &middot; Product Roadmaps &middot; Stakeholder Alignment &middot; Feature Prioritization &middot; Product Discovery &middot; A/B Testing &middot; User Research &middot; PRD Documentation</div>
+    <div class="skillRow"><span class="skillCat">API &amp; Platform Expertise:</span> REST APIs &middot; API Authentication (HMAC, OAuth) &middot; Webhooks &middot; Third-party Integrations &middot; API Documentation &middot; Partner Onboarding &middot; Digital Integrations &middot; Data Constraints</div>
+    <div class="skillRow"><span class="skillCat">Technical &amp; Architecture:</span> System Design &middot; Microservices &middot; Database Architecture (SQL, Graph DB) &middot; Cloud Platforms (AWS, Azure) &middot; Scalable Systems &middot; Fault-tolerant Systems</div>
+    <div class="skillRow"><span class="skillCat">Leadership &amp; Delivery:</span> Cross-functional Leadership &middot; Stakeholder Management (C-suite, internal, external) &middot; Team Leadership &middot; Scrum/Agile &middot; Negotiation &middot; Risk Management &middot; Engineering Management</div>
+    <div class="skillRow"><span class="skillCat">AI-assisted Prototyping:</span> Rapid end-to-end working prototyping using GitHub Copilot and Claude</div>
+    <div class="skillRow"><span class="skillCat">PM Tools:</span> Jira &middot; Confluence &middot; Google Analytics (GA4) &middot; Postman &middot; Swagger/OpenAPI &middot; Amplitude &middot; Segment</div>
+    <div class="skillRow"><span class="skillCat">Technologies:</span> C# &middot; .NET Core &middot; ASP.NET MVC &middot; Python &middot; JavaScript &middot; Vue.js &middot; SQL Server &middot; MySQL &middot; PostgreSQL &middot; AWS (EC2, S3, Lambda, Neptune, CloudWatch, Athena) &middot; Azure &middot; RabbitMQ</div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="sectionTitle">Professional Experience</div>
+
+    <!-- Pessl Instruments -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Product Manager &mdash; Platform Strategy, APIs &amp; Digital Integrations</span>
+        <span class="jobDate">May 2023 &ndash; Present</span>
+      </div>
+      <div class="jobOrg">Pessl Instruments (Metos) &middot; Weiz/Graz, Austria</div>
+      <ul class="jobBullets">
+        <li>Designed and implemented API monetization strategy generating <strong>&euro;850K annual revenue stream</strong> while reducing infrastructure costs, in collaboration with CEO, Sales VP, CPO, and Country Heads.</li>
+        <li>Improved API reliability achieving <strong>25% reduction in support tickets</strong> and <strong>18% improvement in proactive error detection</strong> by introducing webhooks, data constraints, and automated logging/notification systems.</li>
+        <li>Onboarded external partners for digital business integrations, enabling seamless data exchange with third-party systems and unlocking data-driven insights.</li>
+        <li>Provided hands-on client support including code samples, authentication guidance (HMAC vs OAuth), real-time troubleshooting, and custom feature evaluation balancing business impact vs engineering cost.</li>
+        <li>Enhanced cross-functional communication and product delivery flows across sales, support, marketing, software, firmware, and hardware teams.</li>
+        <li>Managed stakeholder expectations balancing API constraints with client flexibility; negotiated scope, priorities, and timelines to minimize delivery risk.</li>
+        <li>Conceptualised and led full-flow design of a <strong>subscription management system</strong> for all products and services, delivered via two in-house tools:
+          <ul class="subList">
+            <li><strong>Subscription Portal</strong> &mdash; product listing with pricing specifications, coupons/promos creation, subscription approval/creation/management, country-level &amp; admin access rights.</li>
+            <li><strong>User Access Management Portal</strong> &mdash; roles &amp; access management, audit trail of all actions/changes.</li>
+            <li>Integrated <strong>Google Analytics</strong> across all wizards and user flows to track and measure user behaviour and funnel performance.</li>
+          </ul>
+        </li>
+        <li>Created PoCs for the Subscription Portal and User Access Management Portal; built a PoC for <strong>FieldClimate Chatbot</strong> &mdash; a conversational UI delivering real-time and forecasted weather updates via natural language.</li>
+      </ul>
+      <div class="jobTech"><span>Tools &amp; Stack:</span> REST APIs &middot; Webhooks &middot; HMAC &middot; OAuth &middot; Monitoring Systems &middot; Logging &middot; Subscription Management &middot; Access Control &middot; Google Analytics &middot; AI Prototyping &middot; Jira &middot; Mongodb </div>
+      </div>
+    </div>
+
+    <!-- Career Break -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Career Break</span>
+        <span class="jobDate">Nov 2022 &ndash; Apr 2023</span>
+      </div>
+      <div class="jobOrg">Family Time, product upskilling, and successful relocation from Malaysia to Austria (EU)</div>
+    </div>
+
+    <!-- Carsome -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Product Manager &mdash; Growth</span>
+        <span class="jobDate">Jul 2022 &ndash; Oct 2022</span>
+      </div>
+      <div class="jobOrg">Carsome &middot; Kuala Lumpur, Malaysia</div>
+      <ul class="jobBullets">
+        <li>Aligned product roadmap with company leadership vision through cross-departmental stakeholder collaboration.</li>
+        <li>Optimized customer journey by identifying friction points and building features to improve conversion rates, user acquisition, and retention KPIs.</li>
+        <li>Conducted product discovery research ensuring the team solved real user problems; iterated on findings.</li>
+        <li>Validated initiatives through A/B testing and user research in collaboration with UI/UX, Product, and Branding teams.</li>
+        <li>Translated digital marketing and growth initiatives into actionable product features.</li>
+        <li>Led feature prioritization and scrum ceremonies; created detailed PRDs with functional capabilities and acceptance criteria.</li>
+      </ul>
+      <div class="jobTech"><span>Tools &amp; Stack:</span> A/B Testing &middot; Google Analytics &middot; Google Tag Manager &middot; Confluence &middot; Amplitude</div>
+    </div>
+
+    <!-- Engineering Manager -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Full Stack Engineering Manager</span>
+        <span class="jobDate">Feb 2021 &ndash; Jun 2022</span>
+      </div>
+      <div class="jobOrg">Entropia (Part of Accenture) &middot; Kuala Lumpur, Malaysia</div>
+      <ul class="jobBullets">
+        <li>Led engineering teams from ideation to deployment across multiple digital transformation projects for enterprise clients.</li>
+        <li><strong>AIA Insurance (Philippines):</strong> Built recommendation engine using persona and psychometric analysis &mdash; Vue.js, Laravel, AWS (EC2, S3, SES), MySQL.</li>
+        <li><strong>Heineken/Drinkies (Malaysia):</strong> Created online/offline data streams for user segmentation based on taste profiles and purchasing patterns &mdash; .NET Core, AWS Neptune, Lambda, Athena.</li>
+        <li><strong>RHB Bank Berhad (Malaysia):</strong> Designed IC verification system with salary-based insurance recommendations &mdash; .NET Core MVC, SQL Server.</li>
+        <li><strong>MDEC (Malaysia Government):</strong> Developed 3-portal training application approval system with automated profiling &mdash; Vue.js, Laravel, AWS.</li>
+        <li>Managed full project lifecycle including architecture decisions, team leadership, stakeholder communication, and production deployment.</li>
+      </ul>
+      <div class="jobTech"><span>Tools &amp; Stack:</span> Vue.js &middot; .NET Core &middot; PHP Laravel &middot; AWS(EC2, S3, SES, Lambda, Athena, Neptune) &middot; MySQL &middot; SQL Server</div>
+    </div>
+
+    <!-- Senior Product Engineer -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Senior Product Engineer</span>
+        <span class="jobDate">Apr 2018 &ndash; Jan 2021</span>
+      </div>
+      <div class="jobOrg">Entropia (Part of Accenture) &middot; Kuala Lumpur, Malaysia</div>
+      <ul class="jobBullets">
+        <li>Architected and built &ldquo;Elon&rdquo; &mdash; an omnichannel customer journey mapping platform integrating campaigns, CRM, web, e-commerce, customer service, and in-store data into a 360&deg; customer view.</li>
+        <li>Platform processed <strong>millions of events daily</strong> for <strong>10+ major clients</strong> (Heineken, AIA, Taylors, Sime Darby, KFC), enabling data-driven marketing strategies that increased client sales by <strong>5&ndash;10%</strong>.</li>
+        <li>Led technical team of 5 engineers; reported directly to CTO making critical architecture and technology decisions.</li>
+        <li>Selected hybrid SQL + Graph DB (AWS Neptune) architecture for efficient event processing and relationship mapping at scale.</li>
+        <li>Designed horizontally scalable, fault-tolerant architecture to handle growing event volumes seamlessly.</li>
+      </ul>
+      <div class="jobTech"><span>Tools &amp; Stack:</span> Vue.js &middot; .NET Core &middot; C# Microservices &middot; PostgreSQL &middot; AWS(EC2, S3, SES, Lambda, DynamoDB
+        , Neptune) &middot; RabbitMQ &middot; Jenkins &middot; Bitbucket</div>
+    </div>
+
+    <!-- DeltaX -->
+    <div class="job">
+      <div class="jobHeader">
+        <span class="jobRole">Product Engineer</span>
+        <span class="jobDate">Jun 2014 &ndash; Feb 2018</span>
+      </div>
+      <div class="jobOrg">DeltaX &middot; Bangalore, India</div>
+      <ul class="jobBullets">
+        <li>Contributed to algorithm design, application architecture, and implementation of highly available, fault-tolerant systems on a cloud-based digital media management platform.</li>
+        <li>Designed and developed reliable APIs for third-party integrations; integrated Google Analytics to sync data between platforms.</li>
+        <li>Implemented real-time error handling and notification system alerting developers to data processing issues, significantly reducing downtime.</li>
+        <li>Worked on media attribution, campaign optimization, and multi-channel reporting handling approximately <strong>1 billion events per day</strong>.</li>
+      </ul>
+      <div class="jobTech"><span>Tools &amp; Stack:</span> ASP.NET MVC &middot; Entity Framework &middot; SQL Server &middot; Azure &middot; Google Analytics API &middot; REST APIs &middot; Azure DevOps</div>
+    </div>
+
+  </div>
+
+  <!-- KEY ACHIEVEMENTS -->
+  <div class="section">
+    <div class="sectionTitle">Key Achievements &amp; Impact</div>
+    <div class="achieveGrid">
+      <div class="achieveBlock">
+        <h4>API Monetization</h4>
+        <ul>
+          <li>Built and launched tiered API subscription model generating <strong>&euro;850K annual recurring revenue</strong></li>
+          <li>Designed end-to-end subscription flow across pricing, coupons/promos, approvals, and lifecycle management</li>
+          <li>Balanced monetization goals with API constraints to protect platform integrity and delivery reliability</li>
+          <li>Enabled scalable commercial packaging for products and services across markets</li>
+        </ul>
+      </div>
+      <div class="achieveBlock">
+        <h4>Reliability &amp; Scale</h4>
+        <ul>
+          <li>Reduced support tickets by <strong>25%</strong> through improved observability and operational controls</li>
+          <li>Improved proactive error detection by <strong>18%</strong> using automated logging and notifications</li>
+          <li>Designed two internal tools (Subscription Portal and User Access Management Portal) with RBAC and audit trails</li>
+          <li>Integrated Google Analytics across onboarding wizards and user journeys for funnel-level performance tracking</li>
+        </ul>
+      </div>
+      <div class="achieveBlock">
+        <h4>Business &amp; Platform Impact</h4>
+        <ul>
+          <li>Delivered <strong>5&ndash;10% sales growth</strong> for major enterprise clients through data-driven platform capabilities</li>
+          <li>Supported <strong>40,000+ connected devices</strong> via scalable API integrations</li>
+          <li>Onboarded multiple external partners for digital business integrations and ecosystem expansion</li>
+          <li>Shipped products and solutions across India, Malaysia, and Austria in cross-functional, multicultural environments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="sectionTitle">Education</div>
+    <div class="job" style="margin-bottom:10px;">
+      <div class="jobHeader">
+        <span class="jobRole">Master in Computer Applications</span>
+        <span class="jobDate">2011 &ndash; 2014</span>
+      </div>
+      <div class="jobOrg">Dayananda Sagar College of Engineering &middot; Bangalore, India</div>
+    </div>
+    <div class="job" style="margin-bottom:0;">
+      <div class="jobHeader">
+        <span class="jobRole">Bachelors of Science in Information Technology</span>
+        <span class="jobDate">2008 &ndash; 2011</span>
+      </div>
+      <div class="jobOrg">Atmiya Institute of Science and Technology &middot; Rajkot, India</div>
+    </div>
+  </div>
+
+  <!-- ADDITIONAL INFORMATION -->
+  <div class="section">
+    <div class="sectionTitle">Additional Information</div>
+    <div class="addlRow"><span class="addlLabel">Languages:</span> English (IELTS C1 / 7.5 - 2024), Hindi, Gujarati</div>
+    <div class="addlRow"><span class="addlLabel">Work Authorization:</span> Authorized to work in the EU (Austria RWR Plus Card)</div>
+    <div class="addlRow"><span class="addlLabel">Current Location:</span> Graz, Austria &mdash; open to work remotely or relocate for on-site opportunities</div>
+    <div class="addlRow"><span class="addlLabel">Writing:</span> Active contributor on Medium and LinkedIn covering product management, development practices, and digital transformation</div>
+  </div>
+
+</body>
+</html>
